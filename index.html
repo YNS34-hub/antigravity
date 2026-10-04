@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eef3f8" />
+    <title>The Memory Palace — Reborn</title>
+    <meta name="description" content="An impossible architecture of light. Memory does not obey geometry." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23eef3f8'/%3E%3Crect x='13' y='6' width='6' height='20' fill='%239fd0ff'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <canvas id="world" aria-label="The Memory Palace, an explorable architectural space"></canvas>
+
+    <div id="veil"></div>
+
+    <header class="mark">
+      <span class="mark__title">The Memory Palace</span>
+      <span class="mark__place" id="place">I · The Atrium</span>
+    </header>
+
+    <div class="line" id="line"></div>
+    <div class="hint" id="hint"><span>Click to walk</span><i></i><span>Drag to look</span><i></i><span>Hold still to keep a moment</span></div>
+    <a class="caption" id="caption" target="_blank" rel="noopener"></a>
+    <button class="sound" id="sound" type="button">Sound off</button>
+    <div class="cursor" id="cursor"><svg viewBox="0 0 40 40"><circle class="cursor__ring" cx="20" cy="20" r="17" /><circle class="cursor__charge" id="charge" cx="20" cy="20" r="17" /></svg></div>
+
+    <noscript>The Memory Palace needs JavaScript and WebGL2.</noscript>
+    <div class="fallback" id="fallback" hidden>
+      <p>The Memory Palace needs WebGL2 and a desktop GPU.</p>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

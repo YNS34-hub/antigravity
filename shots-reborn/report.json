@@ -1,0 +1,38 @@
+{
+  "url": "http://localhost:57422/",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 1650 (0x00001F99) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "fps": [
+    {
+      "label": "Atrium Vestibule",
+      "avg": 144.7,
+      "worstFrameMs": 7.1
+    },
+    {
+      "label": "Atrium Hall",
+      "avg": 145.4,
+      "worstFrameMs": 7.6
+    },
+    {
+      "label": "Listening Room Rotunda",
+      "avg": 144.8,
+      "worstFrameMs": 7.3
+    },
+    {
+      "label": "Infinite Corridor",
+      "avg": 145.8,
+      "worstFrameMs": 7.1
+    }
+  ],
+  "log": [
+    "[eval] 0",
+    "[eval] 0",
+    "[eval] -1.5707963267948966",
+    "[eval] undefined",
+    "[eval] -0.32",
+    "[eval] undefined",
+    "[eval] 3.141592653589793",
+    "[eval] undefined",
+    "[eval] -0.06",
+    "[eval] 0"
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "wait": 1800
+  },
+  {
+    "shot": "direct-render-test"
+  }
+]

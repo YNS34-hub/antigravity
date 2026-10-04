@@ -1,0 +1,86 @@
+@import '@fontsource/cormorant-garamond/300-italic.css';
+@import '@fontsource/cormorant-garamond/400-italic.css';
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+
+:root {
+  --ink: #1b2836;
+  --ink-soft: rgba(27, 40, 54, 0.62);
+  --memory: #9fd0ff;
+  --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #eef3f8; }
+body { font-family: var(--sans); color: var(--ink); cursor: none; user-select: none; -webkit-font-smoothing: antialiased; }
+
+#world { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+
+#veil {
+  position: fixed; inset: 0; background: #f6f9fc; pointer-events: none;
+  transition: opacity 0.9s cubic-bezier(.2, .8, .2, 1);
+}
+#veil.gone { opacity: 0; }
+#veil.flash { transition: opacity .18s ease-out; opacity: .85; }
+
+.mark {
+  position: fixed; top: 34px; left: 40px; display: flex; flex-direction: column; gap: 6px;
+  pointer-events: none; mix-blend-mode: multiply;
+}
+.mark__title { font: 400 italic 17px/1 var(--serif); letter-spacing: .01em; color: var(--ink); }
+.mark__place {
+  font: 300 9.5px/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--ink-soft);
+  transition: opacity 1.2s ease;
+}
+
+.line {
+  position: fixed; left: 50%; bottom: 13vh; transform: translateX(-50%);
+  font: 300 italic clamp(20px, 1.9vw, 30px)/1.25 var(--serif); color: var(--ink); text-align: center;
+  white-space: nowrap; opacity: 0; transition: opacity 2.4s ease; pointer-events: none;
+  text-shadow: 0 0 24px rgba(246, 249, 252, .9);
+}
+.line.on { opacity: 1; }
+.line.light { color: #f6f9fc; text-shadow: 0 0 24px rgba(10, 20, 30, .35); }
+
+.hint {
+  position: fixed; left: 50%; bottom: 36px; transform: translateX(-50%); display: flex; align-items: center; gap: 14px;
+  font: 300 9.5px/1 var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--ink-soft);
+  opacity: 0; transition: opacity 2s ease; pointer-events: none; white-space: nowrap; mix-blend-mode: multiply;
+}
+.hint i { width: 18px; height: 1px; background: currentColor; opacity: .5; }
+.hint.on { opacity: 1; }
+
+.caption {
+  position: fixed; left: 40px; bottom: 36px; display: flex; flex-direction: column; gap: 8px; max-width: 360px;
+  color: var(--ink); text-decoration: none; opacity: 0; transition: opacity 1.2s ease; pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.caption.on { opacity: 1; pointer-events: auto; cursor: none; }
+.caption b { font: 400 italic 22px/1.1 var(--serif); }
+.caption span { font: 300 12px/1.55 var(--sans); color: var(--ink-soft); }
+.caption em { font: 400 9px/1 var(--sans); font-style: normal; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-soft); }
+
+.sound {
+  position: fixed; right: 40px; bottom: 34px; background: none; border: 0; cursor: none;
+  font: 300 9.5px/1 var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--ink-soft);
+  mix-blend-mode: multiply; padding: 6px 0;
+}
+.sound:hover { color: var(--ink); }
+
+.cursor {
+  position: fixed; left: 0; top: 0; width: 40px; height: 40px; margin: -20px 0 0 -20px; pointer-events: none;
+  transition: opacity .4s ease, transform .35s cubic-bezier(.2, .8, .2, 1); will-change: transform;
+}
+.cursor svg { width: 100%; height: 100%; overflow: visible; transform: rotate(-90deg); }
+.cursor__ring { fill: none; stroke: rgba(27, 40, 54, .55); stroke-width: 1; transform-origin: 20px 20px; transform: scale(.32); transition: transform .45s cubic-bezier(.2, .8, .2, 1), stroke .4s; }
+.cursor__charge { fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-dasharray: 106.8; stroke-dashoffset: 106.8; filter: drop-shadow(0 0 4px rgba(159, 208, 255, .9)); }
+.cursor.hot .cursor__ring { transform: scale(.62); stroke: rgba(27, 40, 54, .8); }
+.cursor.hold .cursor__ring { transform: scale(1); stroke: rgba(255, 255, 255, .7); }
+.cursor.drag .cursor__ring { transform: scale(.18); }
+.cursor.light .cursor__ring { stroke: rgba(246, 249, 252, .75); }
+
+.fallback { display: none; position: fixed; inset: 0; place-items: center; font: 300 italic 24px var(--serif); background: #eef3f8; }
+.fallback.on { display: grid; }
+
+@media (prefers-reduced-motion: reduce) { #veil { transition-duration: .8s; } }

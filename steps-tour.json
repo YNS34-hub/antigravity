@@ -1,0 +1,46 @@
+[
+  { "wait": 1500 },
+  { "fps": 600, "label": "Atrium Vestibule" },
+  { "shot": "01-vestibule" },
+
+  { "eval": "window.palace.controls.cam.position.set(0, 1.62, -8.0); window.palace.controls.targetPos.set(0, 1.62, -8.0); window.palace.controls.yaw = 0; window.palace.controls.targetYaw = 0; window.palace.controls.pitch = 0; window.palace.controls.targetPitch = 0;" },
+  { "wait": 800 },
+  { "fps": 600, "label": "Atrium Hall" },
+  { "shot": "02-atrium-hall" },
+
+  { "eval": "window.palace.controls.cam.position.set(0, 1.62, -18.0); window.palace.controls.targetPos.set(0, 1.62, -18.0); window.palace.controls.yaw = 0; window.palace.controls.targetYaw = 0;" },
+  { "wait": 800 },
+  { "shot": "03-monolith-and-stair" },
+
+  { "eval": "window.palace.controls.cam.position.set(9.5, 1.62, 2.5); window.palace.controls.targetPos.set(9.5, 1.62, 2.5); window.palace.controls.yaw = -Math.PI / 2; window.palace.controls.targetYaw = -Math.PI / 2;" },
+  { "wait": 800 },
+  { "shot": "04-wall-exhibit" },
+
+  { "eval": "window.palace.controls.cam.position.set(400.0, 1.62, -6.0); window.palace.controls.targetPos.set(400.0, 1.62, -6.0); window.palace.controls.yaw = 0; window.palace.controls.targetYaw = 0; window.palace.controls.pitch = 0; window.palace.controls.targetPitch = 0; window.palace.activeSpace = 1; window.palace.onSpaceChanged(1);" },
+  { "wait": 1000 },
+  { "fps": 600, "label": "Listening Room Rotunda" },
+  { "shot": "05-listening-room" },
+
+  { "eval": "window.palace.controls.cam.position.set(400.0, 2.8, -7.2); window.palace.controls.targetPos.set(400.0, 2.8, -7.2); window.palace.controls.yaw = Math.PI; window.palace.controls.targetYaw = Math.PI; window.palace.controls.pitch = -0.32; window.palace.controls.targetPitch = -0.32;" },
+  { "wait": 800 },
+  { "shot": "06-acoustic-mirror" },
+
+  { "eval": "window.palace.controls.cam.position.set(-22.0, 1.62, -45.0); window.palace.controls.targetPos.set(-22.0, 1.62, -45.0); window.palace.controls.yaw = Math.PI / 2; window.palace.controls.targetYaw = Math.PI / 2; window.palace.controls.pitch = 0; window.palace.controls.targetPitch = 0; window.palace.activeSpace = 2; window.palace.onSpaceChanged(2);" },
+  { "wait": 800 },
+  { "fps": 600, "label": "Infinite Corridor" },
+  { "shot": "07-infinite-corridor" },
+
+  { "eval": "window.palace.corridor.turnsCompleted = 1; window.palace.controls.cam.position.set(-46.0, 1.62, -35.0); window.palace.controls.targetPos.set(-46.0, 1.62, -35.0); window.palace.controls.yaw = Math.PI; window.palace.controls.targetYaw = Math.PI;" },
+  { "wait": 800 },
+  { "shot": "08-corridor-altered" },
+
+  { "eval": "window.palace.activeSpace = 0; window.palace.onSpaceChanged(0); window.palace.controls.cam.position.set(0, 1.62, -8.0); window.palace.controls.targetPos.set(0, 1.62, -8.0); window.palace.controls.yaw = 0; window.palace.controls.targetYaw = 0; window.palace.controls.pitch = 0; window.palace.controls.targetPitch = 0; window.palace.keep.triggerKeep();" },
+  { "wait": 300 },
+  { "eval": "window.palace.controls.cam.position.set(1.4, 1.45, -7.0); window.palace.controls.targetPos.set(1.4, 1.45, -7.0); window.palace.controls.yaw = 0.26; window.palace.controls.targetYaw = 0.26; window.palace.controls.pitch = -0.06; window.palace.controls.targetPitch = -0.06;" },
+  { "wait": 800 },
+  { "shot": "09-keep-memory-pane" },
+
+  { "eval": "window.palace.activeSpace = 0; window.palace.onSpaceChanged(0); window.palace.pipeline.mComp.uniforms.uFade.value = 0; window.palace.controls.cam.position.set(0, 1.62, -50.0); window.palace.controls.targetPos.set(0, 1.62, -50.0); window.palace.controls.yaw = Math.PI; window.palace.controls.targetYaw = Math.PI; window.palace.controls.pitch = 0; window.palace.controls.targetPitch = 0;" },
+  { "wait": 800 },
+  { "shot": "10-atrium-afterglow" }
+]
