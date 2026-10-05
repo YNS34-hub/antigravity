@@ -137,10 +137,10 @@ class MemoryPalace {
   loadProjectProjections() {
     const loader = new THREE.TextureLoader();
     const textures = [
-      loader.load('/media/void-echo.jpg'),
-      loader.load('/media/giannis.jpg'),
-      loader.load('/media/waterline.jpg'),
-      loader.load('/media/afterglow.jpg'),
+      loader.load(`${import.meta.env.BASE_URL}media/void-echo.jpg`),
+      loader.load(`${import.meta.env.BASE_URL}media/giannis.jpg`),
+      loader.load(`${import.meta.env.BASE_URL}media/waterline.jpg`),
+      loader.load(`${import.meta.env.BASE_URL}media/afterglow.jpg`),
     ];
     textures.forEach(t => {
       t.colorSpace = THREE.SRGBColorSpace;
